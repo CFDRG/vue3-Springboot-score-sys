@@ -1,0 +1,15 @@
+diff a/program/score-sys/src/views/studentTable.vue b/program/score-sys/src/views/studentTable.vue	(rejected hunks)
+@@ -6,8 +6,12 @@
+ <script setup>
+ import ScoreForm from '@/components/scoreForm.vue';
+ import vTable from '@/components/vTable.vue';
+-import { ref } from 'vue';
++import { provide ,ref } from 'vue';
+ 
+ const tableData = ref([]);
++provide('tableData', tableData);
++provide('addTableData', (data) => {
++  tableData.value.push(data);
++});
+ 
+ </script>
